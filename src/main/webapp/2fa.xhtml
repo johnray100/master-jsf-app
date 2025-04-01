@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+   <title>Two-Factor Authentication</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"/>
+</h:head>
+
+<h:body class="container d-flex justify-content-center align-items-center vh-100">
+   <h:form class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+      <h2 class="text-center mb-3">Two-Factor Authentication</h2>
+      <p:messages id="messages" showDetail="true" closable="true"/>
+
+      <div class="mb-3">
+         <label for="twoFACode" class="form-label">Enter 2FA Code</label>
+         <p:inputText id="twoFACode" value="#{twoFactorAuthBean.twoFACode}" styleClass="form-control"
+                      placeholder="Enter 2FA Code" required="true"/>
+      </div>
+
+      <p:commandButton value="Verify" action="#{twoFactorAuthBean.verifyCode}" update="messages"
+                       styleClass="btn btn-primary w-100"/>
+
+      <div class="text-center mt-3">
+         <p:commandLink value="Resend Code" action="#{twoFactorAuthBean.resendCode}" update="messages"/>
+      </div>
+   </h:form>
+</h:body>
+</html>

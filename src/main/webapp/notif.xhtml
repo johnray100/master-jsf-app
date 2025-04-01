@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+   <title>Notifications</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"/>
+</h:head>
+
+<h:body class="container mt-4">
+   <h2 class="text-center">Notifications</h2>
+
+   <h:form id="notificationForm">
+      <!-- Growl Notification -->
+      <p:growl id="growl" showDetail="true" life="3000"/>
+
+      <!-- Message Input -->
+      <div class="mb-3">
+         <label for="message" class="form-label">Enter Message:</label>
+         <p:inputText id="message" value="#{notifBean.customMessage}" styleClass="form-control"/>
+      </div>
+
+      <!-- Notification Buttons -->
+      <div class="row text-center mt-3">
+         <div class="col-md-3">
+            <p:commandButton value="Info" actionListener="#{notifBean.showInfo}"
+                             update="growl" styleClass="btn btn-info w-100"/>
+         </div>
+         <div class="col-md-3">
+            <p:commandButton value="Success" actionListener="#{notifBean.showSuccess}"
+                             update="growl" styleClass="btn btn-success w-100"/>
+         </div>
+         <div class="col-md-3">
+            <p:commandButton value="Warning" actionListener="#{notifBean.showWarning}"
+                             update="growl" styleClass="btn btn-warning w-100"/>
+         </div>
+         <div class="col-md-3">
+            <p:commandButton value="Error" actionListener="#{notifBean.showError}"
+                             update="growl" styleClass="btn btn-danger w-100"/>
+         </div>
+      </div>
+   </h:form>
+</h:body>
+</html>

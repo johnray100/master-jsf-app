@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+    <title>Dashboard</title>
+    <!-- MDBootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"/>
+</h:head>
+<body class="container mt-5">
+<div class="card p-4 shadow-lg">
+    <h1 class="text-center mb-4">Dashboard</h1>
+    <p class="text-center">Welcome! Use the links below to navigate:</p>
+
+    <div class="list-group">
+        <h:link outcome="login.xhtml" styleClass="list-group-item list-group-item-action">Login</h:link>
+        <h:link outcome="registration.xhtml" styleClass="list-group-item list-group-item-action">Registration</h:link>
+        <h:link outcome="forgot-password.xhtml" styleClass="list-group-item list-group-item-action">Forgot Password</h:link>
+        <h:link outcome="change-password.xhtml" styleClass="list-group-item list-group-item-action">Change Password</h:link>
+        <h:link outcome="error-404.xhtml" styleClass="list-group-item list-group-item-action">404 Page</h:link>
+    </div>
+</div>
+
+
+
+
+<!-- MDBootstrap JS -->
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+</body>
+</html>
